@@ -1,10 +1,10 @@
 # rofitr
 
-A bash script to translate text using rofi.
-
-![rofitr](https://user-images.githubusercontent.com/32964025/85084679-35b2fc80-b1de-11ea-9f89-ffc51e546253.gif "rofitr in action")
+A bash script to translate text using rofi, simplified compared
+to the master branch.
 
 ## Usage
+
 <table>
 <tbody>
 <tr><th colspan="2"><strong>Translation</strong></th></tr><tr><td><strong>Input</strong></td><td><strong>Description</strong></td></tr>
@@ -12,70 +12,29 @@ A bash script to translate text using rofi.
 <tr><td><code>:en text</code></td><td>Auto-detect SOURCE; translate into English</td></tr>
 <tr><td><i>text</i></td><td>Translate with defaults</td></tr>
 <tr><th colspan="2"><strong>Actions</strong></th></tr><tr><td><strong>Keyword</strong></td><td><strong>Description</strong></td></tr>
-<tr><td><code>!e word</code></td><td>show examples for "word"</td></tr>
-<tr><td><code>!s text</code></td><td>speak the "text"</td></tr>
-<tr><td><code>!!</code></td><td>show last translation</td></tr>
-<tr><td><code>!!e</code></td><td>show examples for last translation</td></tr>
-<tr><td><code>!!s</code></td><td>speak last translation</td></tr>
-<tr><td><code>!</code></td><td>select and translate from history</td></tr>
-<tr><td><code>!d</code></td><td>select and delete from history</td></tr>
-<tr><td><code>!dd</code></td><td>clear history (in delete mode)</td></tr>
 <tr><td><code>?</code></td><td>display usage</td></tr>
 </tbody>
 </table>
 
 #### Command line:
+
 - Launch rofitr:
+
 ```
 $ rofitr
 ```
-- Translate into Russian:
+
+- Translate into Swedish:
+
 ```
-$ rofitr :ru text
-```
-- Translate from primary selection (clipboard):
-```
-$ rofitr -s
+$ rofitr :sv speed
 ```
 
 ## Requirements
-* [rofi](https://github.com/davatorium/rofi)
-* [crow-translate](https://github.com/crow-translate/crow-translate)
-* Basic Linux utilities
+
+- [rofi](https://github.com/davatorium/rofi)
+- [crow-translate](https://github.com/crow-translate/crow-translate)
 
 ## Configuration
-Edit script to change default translation options or pass them from command line:
-```
-SOURCE=en TARGET=ru rofitr
-```
-Following options are configurable:
-```
-## Set defaults
-# SOURCE="en"               # source language code
-# TARGET="es"               # translation language code
-# ENGINE="google"           # google, yandex or bing
-# LOCALE="en"               # translator language ($LANG var. by default)
-# SPEAK_SOURCE="false"      # speak the source (true/false)
-# SPEAK_TRANSLATION="false" # speak the translation (true/false)
 
-## Rofi general options
-# leave these empty or comment out to use system defaults:
-FONT="mono 10"
-WIDTH="60"
-LOCATION="2"
-YOFFSET="20"
-
-# use alternative config and theme
-# CONFIG="~/.config/rofi/translate-config.rasi"
-# THEME="/usr/share/rofi/themes/lb.rasi"
-
-## Rofi required options
-HIST_LINES="15" # lines to show for history mode
-RES_LINES="42"  # limit output to screen height
-PROMPT_TR=" translate"
-PROMPT_HIST=" history"
-PROMPT_DEL=" delete"
-CLR_RESULT="#ebdbb2" # text color for translation
-CLR1="#b8bb26"
-CLR2="#1d2021"
-```
+Edit the script, it's simple enough. It's not clean though, some variables probably do nothing
